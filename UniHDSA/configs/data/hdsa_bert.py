@@ -16,12 +16,9 @@ if repo_root not in sys.path:
     sys.path.insert(0, repo_root)
 
 from evaluation.unified_layout_evaluation import UniLayoutEvaluator
-# TODO: Need to implement TextTokenizer or import from transformers
-# Using temporary implementation
+# Using temporary implementations
 from UniHDSA.utils.text_tokenizer import TextTokenizer
-
-from detrex.data.dataset_mappers import PODDatasetMapper, pod_transform_gen
-from detrex.data.dataset_mappers import HRDocDatasetMapper
+from UniHDSA.utils.data_mappers import PODDatasetMapper, pod_transform_gen, HRDocDatasetMapper
 
 dataloader = OmegaConf.create()
 

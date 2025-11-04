@@ -18,6 +18,12 @@ from .model_components import (
 
 from .text_tokenizer import TextTokenizer
 
+from .data_mappers import (
+    PODDatasetMapper,
+    pod_transform_gen,
+    HRDocDatasetMapper,
+)
+
 __all__ = [
     'UniDETRMultiScales',
     'DabDeformableDetrTransformer',
@@ -30,4 +36,7 @@ __all__ = [
     'DocTransformer',
     'Bert',
     'TextTokenizer',
+    'PODDatasetMapper',
+    'pod_transform_gen',
+    'HRDocDatasetMapper',
 ]
