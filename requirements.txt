@@ -1,0 +1,8 @@
+transformers
+omegaconf
+opencv-python
+numpy
+tqdm
+wandb 
+timm
+PyMuPDF
