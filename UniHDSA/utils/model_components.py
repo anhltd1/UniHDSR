@@ -7,8 +7,6 @@ import torch
 import torch.nn as nn
 from typing import Dict, List, Any, Optional
 from transformers import BertModel, BertConfig
-from detectron2.modeling import META_ARCH_REGISTRY
-from detrex.modeling import Deformable_DETR
 
 
 class UniDETRMultiScales(nn.Module):
