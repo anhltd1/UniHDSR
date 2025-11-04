@@ -7,28 +7,28 @@ from detectron2.layers import ShapeSpec
 from detectron2.config import LazyCall as L
 from detrex.modeling.matcher import HungarianMatcher
 
-from projects.unified_layout_analysis_v2.modeling import (
+# Fixed imports - using temporary implementations
+import sys
+import os
+# Add the repository root to Python path for imports
+repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+if repo_root not in sys.path:
+    sys.path.insert(0, repo_root)
+
+from UniHDSA.utils.model_components import (
     UniDETRMultiScales,
     DabDeformableDetrTransformer,
     DabDeformableDetrTransformerEncoder,
     DabDeformableDetrTransformerDecoder,
-    TwoStageCriterion
-)
-
-from projects.unified_layout_analysis_v2.modeling.uni_relation_prediction_head import (
+    TwoStageCriterion,
     UniRelationPredictionHead,
-    HRIPNHead
-)
-
-from projects.unified_layout_analysis_v2.modeling.doc_transformer import (
+    HRIPNHead,
     DocTransformerEncoder,
-    DocTransformer
+    DocTransformer,
+    Bert,
 )
 
-from projects.unified_layout_analysis_v2.modeling.backbone.bert import (
-    Bert,
-    TextTokenizer
-)
+from UniHDSA.utils.text_tokenizer import TextTokenizer
 
 # Define the main model
 model = L(UniDETRMultiScales)(

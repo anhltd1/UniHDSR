@@ -7,8 +7,18 @@ from detectron2.data import (
     build_detection_train_loader,
     get_detection_dataset_dicts,
 )
-from projects.unified_layout_analysis_v2.evaluation.unified_layout_evaluation import UniLayoutEvaluator
-from projects.unified_layout_analysis_v2.modeling.backbone.bert import TextTokenizer
+# Fixed import paths - using the existing evaluation module
+import sys
+import os
+# Add the repository root to Python path for imports
+repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+if repo_root not in sys.path:
+    sys.path.insert(0, repo_root)
+
+from evaluation.unified_layout_evaluation import UniLayoutEvaluator
+# TODO: Need to implement TextTokenizer or import from transformers
+# Using temporary implementation
+from UniHDSA.utils.text_tokenizer import TextTokenizer
 
 from detrex.data.dataset_mappers import PODDatasetMapper, pod_transform_gen
 from detrex.data.dataset_mappers import HRDocDatasetMapper
